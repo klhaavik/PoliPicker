@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgba(160, 80, 190, 0.5);
+            margin: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            padding: 10px;
+        }
+        .profile-container {
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+        }
+        img {
+            height: 250px; 
+            width: 250px;   
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto; 
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #fda92c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e8b471;
+        }
+    </style>
+</head>
+<body>
+    <div class = "navbar"> 
+        <button onclick="goBack()">Go Back</button> 
+    </div>
+    <div class="profile-container">
+        <h1>NAME</h1>
+        <img id="profile" src="" alt="Picture of [Name]">
+        <p>NAME is a politician... insert AI description here</p>
+        <button onclick="window.location.href='compare.html'">Compare with another politician</button>
+    </div>
+
+    <!-- puts a google search engine bar into the website -->
+    <!-- <script async src="https://cse.google.com/cse.js?cx=968f3968bfa4746f4">
+    </script>
+    <div class="gcse-search"></div> -->
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        const apiKey = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ';
+        const cxId = '968f3968bfa4746f4';
+        const query = 'NAME'; // Replace with variable name of politician
+
+        fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cxId}&q=${query}&searchType=image`)
+        .then(response => response.json())
+        .then(data => {
+            const imageUrl = data.items[0].link; // Get the URL of the first image result
+            document.getElementById('profile').src = imageUrl; // Set the image source
+        })
+        .catch(error => console.error('Error fetching image:', error));
+    </script>
+</body>
+</html>

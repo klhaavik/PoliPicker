@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Profiles</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: rgba(160, 80, 190, 0.5);
+            color: white;
+            height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            padding: 10px;
+        }
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .profile-container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            width: 300px;
+        }
+        img {
+            height: 250px; 
+            width: 250px;   
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto; 
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #fda92c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e8b471;
+        }
+    </style>
+</head>
+<body>
+    <div class = "navbar"> 
+        <button onclick="goBack()">Go Back</button> 
+    </div>
+    <div class="profile-wrapper">
+        <!-- First Profile -->
+        <div class="profile-container">
+            <h1>NAMEONE</h1>
+            <img id="profile-1" src="" alt="Picture of NAMEONE">
+            <p>NAMEONE is a politician...</p>
+        </div>
+
+        <!-- Second Profile -->
+        <div class="profile-container">
+            <h1>NAMETWO</h1>
+            <img id="profile-2" src="" alt="Picture of NAMETWO">
+            <p>NAMETWO is a politician...</p>
+        </div>
+    </div>
+
+    <script>
+
+        function goBack() {
+            window.history.back();
+        }
+
+        const apiKey = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ';
+        const cxId = '968f3968bfa4746f4';
+
+        // Function to fetch images
+        function fetchImage(query, imgElementId) {
+            fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cxId}&q=${query}&searchType=image`)
+            .then(response => response.json())
+            .then(data => {
+                const imageUrl = data.items[0].link; // Get the URL of the first image result
+                document.getElementById(imgElementId).src = imageUrl; // Set the image source
+            })
+            .catch(error => console.error('Error fetching image:', error));
+        }
+
+        // Fetch images for both profiles
+        fetchImage('Kamala Harris', 'profile-1'); // First profile image
+        fetchImage('Donald Trump', 'profile-2'); // Second profile image
+    </script>
+</body>
+</html>
