@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="searchResults.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="search.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img class="navbar-img" src="PolipickerLogo.png" alt="Polipicker">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <form class="search-bar" action="results.php">
+                <input type="text" placeholder="Search elections, politicians...">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>   
+        </div>
+        <div class="navbar-right">
+            <a href="profile.html">
+                <img id="pfp" class="navbar-img" src="ProfilePicture.png" alt="Account">
+            </a>
+        </div>
+    </nav>
+    <div class="alignment-container">
+        <div class="content-container">
+            <!-- Search Results Title -->
+            <h1 class="search-title">Search Results for "John Doe"</h1>
+            <hr class="divider">
+
+            <!-- Search Results List -->
+            <div class="search-results">
+                <!-- Example search result item -->
+                <div class="search-result-item">
+                    <img src="profile-pic1.jpg" alt="Profile Picture" class="profile-pic">
+                    <div class="result-info">
+                        <h2 class="politician-name">John Doe</h2>
+                        <p class="recent-position">Former Governor of California</p>
+                    </div>
+                    <p class="recent-election">2020 Presidential Election</p>
+                </div>
+
+                <div class="search-result-item">
+                    <img src="profile-pic2.jpg" alt="Profile Picture" class="profile-pic">
+                    <div class="result-info">
+                        <h2 class="politician-name">Jane Smith</h2>
+                        <p class="recent-position">Senator, New York</p>
+                    </div>
+                    <p class="recent-election">2024 Senate Election</p>
+                </div>
+
+                <!-- Repeat more search result items dynamically -->
+            </div>
+
+            <!-- Pagination Section -->
+            <div class="pagination">
+                <button class="arrow" id="prev-arrow">&#8592;</button>
+                <p class="results-info">Results 1-10 of 100</p>
+                <button class="arrow" id="next-arrow">&#8594;</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

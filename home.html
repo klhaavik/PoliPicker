@@ -6,6 +6,8 @@
     <title>PoliPicker</title>
     <link href="main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="carousel.css">
 </head>
 <body>
     <nav class="navbar">
@@ -23,11 +25,36 @@
             </form>   
         </div>
         <div class="navbar-right">
-            <a href="account.html">
+            <a href="profile.html">
                 <img id="pfp" class="navbar-img" src="ProfilePicture.png" alt="Account">
             </a>
         </div>
     </nav>
+    <div class="alignment-container">
+        <div class="carousel-container">
+            <span class="arrow left-arrow" id="prev">&#10094;</span>
 
+            <div class="carousel-content">
+                <div class="carousel-slide" id="carousel-slide">
+                    <div class="carousel-item">
+                        <img src="placeholderEventImg1.png" alt="Event 1">
+                        <div class="headline">Headline 1: Breaking News Story</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="placeholderEventImg2.png" alt="Event 2">
+                        <div class="headline">Headline 2: Important Global Event</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="placeholderEventImg3.png" alt="Event 3">
+                        <div class="headline">Headline 3: Latest in Technology</div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="arrow right-arrow" id="next">&#10095;</span>
+        </div>
+    </div>
+    
+    <script src="carousel.js"></script>
 </body>
 </html>
