@@ -1,5 +1,6 @@
 .navbar {
     display: flex;
+    height: 80px;
     justify-content: flex-start;
     align-items: center;
     background-color: #ce6b9b;
@@ -7,18 +8,19 @@
 }
 
 .navbar-left {
-    float: left
+    margin-right: auto; 
 }
 
 .navbar-center {
-    float: left;
-    width: 100%;
+    flex: 1; 
     text-align: left;
     position: relative;
+    padding-left: 8vw;
+    padding-right: 2vw;
 }
 
 .navbar-right {
-    float: right;
+    margin-left: auto; 
 }
 
 .search-bar {
@@ -44,10 +46,9 @@ form {
 }
 
 .navbar-img {
-    padding: 8px 8px;
-    width: 15%;
-    height: 15%;
-    object-fit: contain
+    width: 50px;
+    height: 50px; 
+    object-fit: contain;
 }
 
 .search-bar button {
