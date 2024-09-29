@@ -88,11 +88,13 @@ searchInput.addEventListener('input', () => {
             entryDiv.className = 'entry';
             entryDiv.innerText = result.entry;
             entryDiv.onclick = () => {
+                let fullName = result.entry;
+                let fileName = fullName.toLowerCase().replace(/\s+/g, '') + ".php";
                 searchInput.value = result.entry; // Set input value to selected entry
                 dropdown.style.display = 'none'; // Hide dropdown
                 localStorage.setItem('PoliticianName', result.entry);
-                /*loadPoliticianDescription(result.entry);
-                /*window.location.href="bioPage.html";*/
+                /*loadPoliticianDescription(result.entry);*/
+                window.location.href=fileName;
             };
             dropdown.appendChild(entryDiv);
         });
