@@ -58,9 +58,9 @@
             </a>
         </div>
         <div class="navbar-center">
-            <form class="search-bar" action="results.php">
+            <form id="searchForm" class="search-bar" method="post" action="description.php">
                 <input id="searchInput" type="text" placeholder="Search politicians...">
-                <button type="submit" disabled>
+                <button type="submit">
                     <i class="fa fa-search"></i>
                 </button>
             </form>   
@@ -68,7 +68,7 @@
         </div>
         <div class="navbar-right">
             <a href="profile.html">
-                <img id="pfp" class="navbar-img" src="ProfilePicture.png" alt="Account">
+                <img id="pfp" class="navbar-img" src="profilePicDefault.png" alt="Account">
             </a>
         </div>
     </nav>
@@ -109,7 +109,7 @@
     <script src="carousel.js"></script>
     <script src="search.js"></script>
     <script>
-        const API_KEY = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ'; // Replace with your API key
+        /*const API_KEY = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ'; // Replace with your API key
         const SEARCH_ENGINE_ID = '968f3968bfa4746f4'; // Replace with your Search Engine ID
         const MAX_RESULTS = 5; // Limit the number of results
 
@@ -142,7 +142,7 @@
         }
 
         // Call the search function when the page loads
-        window.onload = searchGoogle;
+        window.onload = searchGoogle;*/
     </script>
 </body>
 </html>

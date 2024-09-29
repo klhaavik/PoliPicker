@@ -56,6 +56,27 @@ function closeResults(input, topX) {
 const searchInput = document.getElementById('searchInput');
 const dropdown = document.getElementById('dropdown');
 
+function loadPoliticianDescription(selectedPolitician){
+    // Create a FormData object to send data
+    const formData = new FormData();
+    formData.append('politician', selectedPolitician);
+
+    // Send the POST request using Fetch API
+    fetch('https://localhost:5500/description.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.text()) // Process the response
+    .then(data => {
+        console.log(data); // Handle the response data
+    })
+    .catch(error => {
+        console.error('Error:', error); // Handle any errors
+    });
+}
+
+
+
 searchInput.addEventListener('input', () => {
     const inputValue = searchInput.value;
     dropdown.innerHTML = ''; // Clear previous results
@@ -67,10 +88,11 @@ searchInput.addEventListener('input', () => {
             entryDiv.className = 'entry';
             entryDiv.innerText = result.entry;
             entryDiv.onclick = () => {
-                /*searchInput.value = result.entry; // Set input value to selected entry
-                dropdown.style.display = 'none'; // Hide dropdown*/
+                searchInput.value = result.entry; // Set input value to selected entry
+                dropdown.style.display = 'none'; // Hide dropdown
                 localStorage.setItem('PoliticianName', result.entry);
-                window.location.href="bioPage.html";
+                /*loadPoliticianDescription(result.entry);
+                /*window.location.href="bioPage.html";*/
             };
             dropdown.appendChild(entryDiv);
         });
@@ -83,4 +105,10 @@ searchInput.addEventListener('input', () => {
     } else {
         dropdown.style.display = 'none'; // Hide dropdown if input is empty
     }
+});
+
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    loadPoliticianDescription(searchInput.value);
 });

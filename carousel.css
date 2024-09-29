@@ -78,11 +78,11 @@
 
 .arrow {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     font-size: 30px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(46, 46, 46);
+    /*background-color: rgba(0, 0, 0, 0.5);*/
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
@@ -98,7 +98,7 @@
 }
 
 .arrow:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(135, 135, 135, 0.8);
 }
 
 @media (max-width: 600px) {
