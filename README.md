@@ -34,3 +34,4 @@ Kai Haavik | kailionhaavik@gmail.com
 - FileZilla
 - Git
 - GoDaddy Registry
+- Flask
