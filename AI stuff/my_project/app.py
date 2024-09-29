@@ -51,7 +51,16 @@ def index():
 
             # Send a message to summarize the Wikipedia article content
             response = chat_session.send_message("Summarize the Wikipedia article into bullet points")
-            return render_template("index.html", summary=response.text, wiki_link=None)
+            
+            # Use an image search API (for simplicity, we will skip this part in Flask)
+            image_url = f"https://via.placeholder.com/250?text={politician_name.replace(' ', '+')}"  # Placeholder image URL
+            
+            return render_template(
+                "index.html", 
+                name=politician_name, 
+                summary=response.text, 
+                image_url=image_url
+            )
         else:
             return render_template("index.html", error="No Wikipedia page found for the given name.")
     return render_template("index.html")
