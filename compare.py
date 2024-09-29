@@ -71,6 +71,7 @@ def summarize_page(page_link):
 def compare_summaries(summary1, summary2):
     # Start a chat session with the generative AI model
     chat_session = model.start_chat(
+<<<<<<< Updated upstream:compare.py
         history=[
             {
                 "role": "user",
@@ -98,6 +99,35 @@ def compare_summaries(summary1, summary2):
             },
         ]
     )
+=======
+  history=[
+    {
+      "role": "user",
+      "parts": [
+        "I will give you two articles and a String array. Compare these two politicians based off their political views, policy, and ideologies, focusing on using the keywords in the array. Return two bulleted lists: one for similarities and one for differences. Avoid repetition.",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "Please provide me with the two articles and the string array so I can compare the politicians for you. I'm ready to analyze the text and generate the bulleted lists! \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        get_wikipedia_link(summary1), get_wikipedia_link(summary2), array,
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "",
+      ],
+    },
+  ]
+)
+>>>>>>> Stashed changes:AI stuff/compare.py
 
     response = chat_session.send_message("Compare these two politicians based on their policies, beliefs, ideologies, and priorities, and highlight similarities and differences.")
     return response.text
@@ -128,4 +158,8 @@ def compare_pages(page1_name, page2_name):
 name1 = input("Enter the name of the first politician: ")
 name2 = input("Enter the name of the second politician: ")
 
+<<<<<<< Updated upstream:compare.py
 compare_pages(name1, name2)
+=======
+print(compare_summaries(name1, name2, array))
+>>>>>>> Stashed changes:AI stuff/compare.py
