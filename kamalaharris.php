@@ -204,6 +204,7 @@
                     <i class="fa fa-search"></i>
                 </button>
             </form>
+            <div id="dropdownMenu"></div>
         </div>
         <div class="navbar-right">
             <a href="profile.html">
