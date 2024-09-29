@@ -48,11 +48,30 @@
             background-color: #e8b471;
         }
     </style>
+    <style rel="stylesheet" href="navbar.css"></style>
 </head>
 <body>
-    <div class = "top-navbar"> 
-        <button onclick="window.location.href='index.html'">Home</button> 
-    </div>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html">
+                <img class="navbar-img" src="PolipickerLogo.png" alt="Polipicker">
+            </a>
+        </div>
+        <div class="navbar-center">
+            <form class="search-bar" action="results.php">
+                <input id="searchInput" type="text" placeholder="Search politicians...">
+                <button type="submit" disabled>
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>   
+            <div id="dropdown"></div>
+        </div>
+        <div class="navbar-right">
+            <a href="profile.html">
+                <img id="pfp" class="navbar-img" src="ProfilePicture.png" alt="Account">
+            </a>
+        </div>
+    </nav>
     <div class="profile-container">
         <h1>NAME</h1>
         <img id="profile" src="" alt="Picture of [Name]">

@@ -1,22 +1,86 @@
-// Example to dynamically set the search title and pagination
-const query = "John Doe";  // This would come from the search input
-const results = 100;  // Total number of search results
-const currentPage = 1;  // Current page number
+// Sample database
+const database = [
+    "Joe Biden",
+    "Kamala Harris",
+    "Donald Trump",
+    "Joe Manchin",
+    "Marjorie Greene",
+    "Chuck Schumer",
+    "Mitch McConnell"
+];
 
-// Set the search title dynamically
-document.querySelector('.search-title').textContent = `Search Results for "${query}"`;
+// Levenshtein distance function
+function levenshtein(a, b) {
+    const matrix = [];
 
-// Set the pagination dynamically
-const resultsPerPage = 10;
-const startResult = (currentPage - 1) * resultsPerPage + 1;
-const endResult = Math.min(currentPage * resultsPerPage, results);
-document.querySelector('.results-info').textContent = `Results ${startResult}-${endResult} of ${results}`;
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
 
-// Handle pagination buttons (add functionality for next/prev)
-document.getElementById('prev-arrow').addEventListener('click', function() {
-    // Load previous page logic
-});
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
 
-document.getElementById('next-arrow').addEventListener('click', function() {
-    // Load next page logic
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1, // substitution
+                    Math.min(
+                        matrix[i][j - 1] + 1, // insertion
+                        matrix[i - 1][j] + 1 // deletion
+                    )
+                );
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
+}
+
+// Close-results algorithm
+function closeResults(input, topX) {
+    const results = database.map(entry => ({
+        entry,
+        distance: levenshtein(input, entry),
+    }));
+
+    results.sort((a, b) => a.distance - b.distance);
+    
+    return results.slice(0, topX);
+}
+
+// Event listener for input
+const searchInput = document.getElementById('searchInput');
+const dropdown = document.getElementById('dropdown');
+
+searchInput.addEventListener('input', () => {
+    const inputValue = searchInput.value;
+    dropdown.innerHTML = ''; // Clear previous results
+
+    if (inputValue.length > 0) {
+        const results = closeResults(inputValue, 5); // Get top 5 results
+        results.forEach(result => {
+            const entryDiv = document.createElement('div');
+            entryDiv.className = 'entry';
+            entryDiv.innerText = result.entry;
+            entryDiv.onclick = () => {
+                /*searchInput.value = result.entry; // Set input value to selected entry
+                dropdown.style.display = 'none'; // Hide dropdown*/
+                localStorage.setItem('PoliticianName', result.entry);
+                window.location.href="bioPage.html";
+            };
+            dropdown.appendChild(entryDiv);
+        });
+
+        if (results.length > 0) {
+            dropdown.style.display = 'block'; // Show dropdown if there are results
+        } else {
+            dropdown.style.display = 'none'; // Hide dropdown if no results
+        }
+    } else {
+        dropdown.style.display = 'none'; // Hide dropdown if input is empty
+    }
 });

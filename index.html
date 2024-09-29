@@ -14,9 +14,9 @@
             margin: 20px;
             text-align: center;
         }
-        .google-search-bar {
+        /*.google-search-bar {
             margin-bottom: 10px;
-        }
+        }*/
         /* Style for the results container */
         .results-box {
             margin-top: 20px;
@@ -59,11 +59,12 @@
         </div>
         <div class="navbar-center">
             <form class="search-bar" action="results.php">
-                <input type="text" placeholder="Search elections, politicians..." disabled>
+                <input id="searchInput" type="text" placeholder="Search politicians...">
                 <button type="submit" disabled>
                     <i class="fa fa-search"></i>
                 </button>
             </form>   
+            <div id="dropdown"></div>
         </div>
         <div class="navbar-right">
             <a href="profile.html">
@@ -106,6 +107,7 @@
     </div>
     
     <script src="carousel.js"></script>
+    <script src="search.js"></script>
     <script>
         const API_KEY = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ'; // Replace with your API key
         const SEARCH_ENGINE_ID = '968f3968bfa4746f4'; // Replace with your Search Engine ID
