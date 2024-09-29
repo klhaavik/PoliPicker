@@ -1,26 +1,11 @@
 <?php
-/*$summary = ''; // Initialize summary variable
+$summary = ''; // Initialize summary variable
 $error = ''; // Initialize error variable
 
 // Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
-    $politicianName = escapeshellarg($_POST['name']); // Escape the input for safety
-
-    // Command to run the Python script
-    $command = "POLITICIAN_NAME=$politicianName python3 genwiki.py";
-
-    // Execute the command and capture the output and error output
-    exec($command . ' 2>&1', $output, $return_var);
-
-    // Check if the command executed successfully
-    if ($return_var === 0) {
-        $summary = implode("\n", $output); // Join the output array into a string
-    } else {
-        $error = "An error occurred while running the Python script: " . implode("\n", $output);
-    }
-}*/
-if (isset($_POST['politician'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['politician'])) {
     $politicianName = htmlspecialchars($_POST['politician']); // Get the name value
+    /*$politicianName = escapeshellarg($_POST['name']); // Escape the input for safety*/
 
     // Command to run the Python script
     $command = "POLITICIAN_NAME=$politicianName python3 genwiki.py";
@@ -35,6 +20,22 @@ if (isset($_POST['politician'])) {
         $error = "An error occurred while running the Python script: " . implode("\n", $output);
     }
 }
+/*if (isset($_POST['politician'])) {
+    $politicianName = htmlspecialchars($_POST['politician']); // Get the name value
+
+    // Command to run the Python script
+    $command = "POLITICIAN_NAME=$politicianName python3 genwiki.py";
+
+    // Execute the command and capture the output and error output
+    exec($command . ' 2>&1', $output, $return_var);
+
+    // Check if the command executed successfully
+    if ($return_var === 0) {
+        $summary = implode("\n", $output); // Join the output array into a string
+    } else {
+        $error = "An error occurred while running the Python script: " . implode("\n", $output);
+    }
+}*/
 ?>
 
 <!DOCTYPE html>

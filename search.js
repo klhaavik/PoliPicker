@@ -107,8 +107,8 @@ searchInput.addEventListener('input', () => {
     }
 });
 
-document.getElementById('searchForm').addEventListener('submit', function(event) {
+/*document.getElementById('searchForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
     loadPoliticianDescription(searchInput.value);
-});
+});*/
