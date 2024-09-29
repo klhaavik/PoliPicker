@@ -68,38 +68,9 @@ def summarize_page(page_link):
     return response.text
 
 # Function to ask AI to compare the two summaries based on the content of their policies, beliefs, ideologies, and priorities
-def compare_summaries(summary1, summary2):
+def compare_summaries(summary1, summary2, array):
     # Start a chat session with the generative AI model
     chat_session = model.start_chat(
-<<<<<<< Updated upstream:compare.py
-        history=[
-            {
-                "role": "user",
-                "parts": [
-                    "Here are two summaries of different Wikipedia articles each on an American politician. Can you compare each politician based on this content, ignoring syntax, formatting, and organization, listing the similarities and differences of their policies, beliefs, ideologies, and priorities?",
-                ],
-            },
-            {
-                "role": "model",
-                "parts": [
-                    "Sure! Please provide me with both summaries and I'll compare their policies, beliefs, ideologies, and priorities.",
-                ],
-            },
-            {
-                "role": "user",
-                "parts": [
-                    f"Summary 1: {summary1}\n\nSummary 2: {summary2}",
-                ],
-            },
-            {
-                "role": "model",
-                "parts": [
-                    "",
-                ],
-            },
-        ]
-    )
-=======
   history=[
     {
       "role": "user",
@@ -127,7 +98,6 @@ def compare_summaries(summary1, summary2):
     },
   ]
 )
->>>>>>> Stashed changes:AI stuff/compare.py
 
     response = chat_session.send_message("Compare these two politicians based on their policies, beliefs, ideologies, and priorities, and highlight similarities and differences.")
     return response.text
@@ -158,8 +128,4 @@ def compare_pages(page1_name, page2_name):
 name1 = input("Enter the name of the first politician: ")
 name2 = input("Enter the name of the second politician: ")
 
-<<<<<<< Updated upstream:compare.py
-compare_pages(name1, name2)
-=======
 print(compare_summaries(name1, name2, array))
->>>>>>> Stashed changes:AI stuff/compare.py
