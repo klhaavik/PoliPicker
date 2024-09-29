@@ -1,0 +1,36 @@
+from votesmart import VoteSmartAPI
+
+def find_politician_by_name(first_name, last_name):
+    try:
+        # Initialize the VoteSmartAPI object with your API key
+        api_key = '88bda3b6fa27737fd5b2e4655d4a4444'  # Your API key
+        vsmart = VoteSmartAPI(api_key=api_key)
+
+        # Fetch all politicians (national scope)
+        # You could filter by state or office if needed, but we'll search all
+        politicians = vsmart.Candidates.getByLastname(lastName=last_name)
+
+        # Filter results by the first name
+        matching_politicians = [p for p in politicians if p.firstName.lower() == first_name.lower()]
+
+        # Check if we found any matching politicians
+        if not matching_politicians:
+            print(f"No politician found with the name {first_name} {last_name}.")
+            return
+
+        # Display matching politicians
+        print(f"Politicians found with the name {first_name} {last_name}:")
+        for politician in matching_politicians:
+            print(f"Name: {politician.firstName} {politician.lastName}")
+            print(f"Title: {politician.title}")
+            print(f"Party: {politician.officeParties}")
+            print(f"Office: {politician.officeName}")
+            print("--------------------------")
+    
+    except Exception as e:
+        print(f"An error occurred: {e.__class__.__name__}: {str(e)}")
+
+# Example usage:
+first_name = input("Enter the politician's first name: ")
+last_name = input("Enter the politician's last name: ")
+find_politician_by_name(first_name, last_name)
