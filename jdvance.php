@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Profile - JD Vance</title>
     <style>
         .top-navbar {
             display: flex;
@@ -115,18 +115,18 @@
     <!-- Main content (Image and ID Card) -->
     <div class="content-container">
         <div class="profile-container">
-            <h1 id="politicianName">Donald Trump</h1>
-            <img id="profile" src="United-States-President-Donald-Trump-2017.png" alt="Picture of Donald Trump">
-            <p>Donald Trump was the 45th President of the United States, serving from 2017 to 2021. He was a businessman and television personality before entering politics. His presidency was marked by significant tax cuts, trade wars, an emphasis on deregulation, and an isolationist foreign policy. Trump also took a hard stance on immigration, pursued criminal justice reform, and nominated three conservative Supreme Court justices. His administration's response to the COVID-19 pandemic and the 2020 election results remain focal points of his legacy.</p>
+            <h1 id="politicianName">JD Vance</h1>
+            <img id="profile" src="Senator_Vance_official_portrait._118th_Congress.jpg" alt="Picture of JD Vance">
+            <p>JD Vance is a U.S. Senator from Ohio, first elected in 2022. He rose to prominence as the author of the memoir *Hillbilly Elegy*, which explored the struggles of white working-class Americans. Vance ran as a Republican, focusing on issues like economic revitalization, border security, and curbing U.S. involvement in foreign conflicts. As a senator, he has continued to advocate for policies that benefit middle-class Americans and supports a restrained foreign policy.</p>
             <button class="compare-button" onclick="window.location.href='compare.html'">Compare with another politician</button>
         </div>
 
         <div class="id-card">
             <h2>Politician Information</h2>
-            <p><strong>Name:</strong> Donald Trump</p>
-            <p><strong>Age:</strong> 78</p>
+            <p><strong>Name:</strong> JD Vance</p>
+            <p><strong>Age:</strong> 39</p>
             <p><strong>Political Affiliation:</strong> Republican</p>
-            <p><strong>Position Held:</strong> Former President</p>
+            <p><strong>Position Held:</strong> U.S. Senator from Ohio</p>
         </div>
     </div>
 
@@ -135,32 +135,31 @@
         <h2>Summary of Policies</h2>
         <p id="policySummary">
             <h3>Economy and Taxes</h3>
-            Trump's key economic policy was the <i>Tax Cuts and Jobs Act of 2017</i>, which lowered corporate taxes and provided tax cuts for individuals. He also pushed for widespread deregulation, particularly in energy and financial sectors, to spur business growth.
+            JD Vance advocates for tax policies that support working-class families, and he has supported measures to incentivize job creation and economic growth in Ohio.
             
             <h3>Trade</h3>
-            Trump pursued an <i>“America First”</i> trade policy, focusing on renegotiating trade deals and imposing tariffs. The U.S.-China trade war and the replacement of NAFTA with the <i>United States-Mexico-Canada Agreement (USMCA)</i> were major trade initiatives aimed at protecting American industries and jobs.
+            Vance has expressed support for fair trade practices, advocating for trade policies that benefit American workers and oppose offshoring jobs.
             
             <h3>Immigration</h3>
-            Trump's immigration policy emphasized stricter border enforcement. His administration built sections of a wall on the U.S.-Mexico border, implemented travel bans for several Muslim-majority countries, and reduced legal immigration. He also moved to end the DACA program, impacting undocumented individuals brought to the U.S. as children.
+            JD Vance supports strong border security, advocating for the completion of the border wall and stricter immigration enforcement to curb illegal immigration.
             
             <h3>Healthcare</h3>
-            Trump's efforts to repeal the <i>Affordable Care Act (Obamacare)</i> were unsuccessful, but he scaled back its provisions, including the individual mandate. His administration promoted short-term, less comprehensive health plans as alternatives.
+            Vance supports reforms to the healthcare system that aim to reduce costs while improving access, including alternatives to the Affordable Care Act.
             
             <h3>Foreign Policy</h3>
-            Trump took a more isolationist approach, withdrawing the U.S. from international agreements like the <i>Paris Climate Accord</i> and the <i>Iran Nuclear Deal</i>. He reduced U.S. military involvement in places like Syria and Afghanistan, while also engaging in direct diplomacy with North Korea.
+            JD Vance advocates for a more restrained foreign policy, emphasizing national security and limiting U.S. involvement in foreign conflicts unless it directly serves American interests.
             
             <h3>Defense and National Security</h3>
-            Trump increased military spending and established the <i>Space Force</i> as a new military branch. His administration prioritized counterterrorism, leading to the killing of ISIS leader Abu Bakr al-Baghdadi.
+            He supports strengthening the U.S. military while ensuring that military actions abroad are in the direct interest of national security.
             
             <h3>Judiciary</h3>
-            Trump appointed three conservative Supreme Court Justices—Neil Gorsuch, Brett Kavanaugh, and Amy Coney Barrett—reshaping the judiciary. He also appointed over 200 federal judges, cementing a conservative influence on the courts.
+            Vance has praised the appointment of conservative judges to federal courts and supports maintaining a judiciary that interprets the Constitution as originally intended.
             
             <h3>Climate and Energy</h3>
-            Trump promoted energy independence through increased oil, gas, and coal production, rolling back environmental regulations. His administration withdrew from the <i>Paris Climate Accord</i> and downplayed the urgency of climate change, focusing instead on fossil fuel development.
+            Vance has voiced support for energy independence through the continued use of fossil fuels while promoting innovation in alternative energy sources.
             
             <h3>Criminal Justice Reform</h3>
-            Trump signed the <i>First Step Act</i>, which reformed federal prison sentencing, reduced mandatory minimum sentences for nonviolent offenders, and expanded rehabilitation programs.
-            
+            He has shown interest in criminal justice reform, focusing on solutions that address both public safety and the rehabilitation of non-violent offenders.
         </p>
     </div>
 
