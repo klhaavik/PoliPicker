@@ -15,10 +15,11 @@
         <div class="profile-header">
             <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-info">
-                <input type="text" class="name-field" placeholder="Name">
+                <input type="text" id="firstName" class="name-field" placeholder="First Name">
+                <input type="text" id="lastName" class="name-field" placeholder="Last Name">
                 <div class="additional-info">
-                    <input type="text" class="age-field" placeholder="Age">
-                    <input type="text" class="zipcode-field" placeholder="Zip code">
+                    <input type="text" id="age" class="age-field" placeholder="Age">
+                    <input type="text" id="zipCode" class="zipcode-field" placeholder="Zip code">
                 </div>
                 <div class="registered-party">
                     <label for="party">Registered Party: </label>
@@ -38,25 +39,25 @@
         <div class="dropdown-container">
             <input type="text" id="dropdownInput" placeholder="Type to filter issues..." onclick="filterFunction()" onkeyup="filterFunction()">
             <ul id="dropdownMenu" class="dropdown-menu">
-                <li onclick="addIssue(this)">Climate Change</li>
-                <li onclick="addIssue(this)">Healthcare Reform</li>
-                <li onclick="addIssue(this)">Public Education</li>
-                <li onclick="addIssue(this)">Job Creation</li>
-                <li onclick="addIssue(this)">Criminal Justice</li>
-                <li onclick="addIssue(this)">Marijuana Legalization</li>
-                <li onclick="addIssue(this)">Workplace Diversity</li>
-                <li onclick="addIssue(this)">Immigration</li>
-                <li onclick="addIssue(this)">Gun Control</li>
-                <li onclick="addIssue(this)">Social Security</li>
-                <li onclick="addIssue(this)">Reproductive Rights</li>
-                <li onclick="addIssue(this)">Infrastructure</li>
-                <li onclick="addIssue(this)">Economy and Jobs</li>
+                <li onclick="addToList(this.innerText)">Climate Change</li>
+                <li onclick="addToList(this.innerText)">Healthcare Reform</li>
+                <li onclick="addToList(this.innerText)">Public Education</li>
+                <li onclick="addToList(this.innerText)">Job Creation</li>
+                <li onclick="addToList(this.innerText)">Criminal Justice</li>
+                <li onclick="addToList(this.innerText)">Marijuana Legalization</li>
+                <li onclick="addToList(this.innerText)">Workplace Diversity</li>
+                <li onclick="addToList(this.innerText)">Immigration</li>
+                <li onclick="addToList(this.innerText)">Gun Control</li>
+                <li onclick="addToList(this.innerText)">Social Security</li>
+                <li onclick="addToList(this.innerText)">Reproductive Rights</li>
+                <li onclick="addToList(this.innerText)">Infrastructure</li>
+                <li onclick="addToList(this.innerText)">Economy and Jobs</li>
             </ul>
         </div>
 
         <div class="options-container">
-            <a href="profile.html"><button class="save-button" onclick="saveProfile()">Save</button></a>
-            <a href="profile.html"><button class="cancel-button" onclick="cancelProfile()">Cancel</button></a>
+            <button class="save-button" onclick="saveProfile()">Save</button>
+            <button class="cancel-button" onclick="window.location.href='profile.html'">Cancel</button>
         </div>
     </div>
     <script src="filteredDropdown.js"></script>
