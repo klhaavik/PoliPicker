@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        /*body {
-            font-family: Arial, sans-serif;
-            /*text-align: center;
-            background-color: rgba(160, 80, 190, 0.5);
-            margin: 20px;
-        }*/
         .top-navbar {
             display: flex;
             justify-content: space-between;
@@ -20,29 +14,6 @@
             color: white;
             width: 100%;
         }
-
-        /*.navbar a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .navbar img {
-            height: 40px;
-            width: 40px;
-        }
-
-        .navbar-center {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar-center input {
-            padding: 5px;
-            width: 300px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }*/
-
         /* Main Content Styles */
         .content-container {
             display: flex;
@@ -51,19 +22,13 @@
             margin: 20px auto;
             width: 80%;
         }
-
         /* Profile Image Container */
         .profile-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            /*width: 300px;*/
             height: 300px;
             width: 90%;
-            top: 15vw;
-            display: inline-block;
-            text-align: center;
             padding: 20px;
             border: 2px solid #ccc;
             border-radius: 10px;
@@ -71,14 +36,12 @@
             margin-right: 20px;
             overflow: hidden;
         }
-
         .profile-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
         }
-
         .id-card {
             display: flex;
             flex-direction: column;
@@ -91,68 +54,15 @@
             padding: 20px;
             box-sizing: border-box;
         }
-
-        .id-card h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-
-        .id-card p {
-            margin: 5px 0;
-            font-size: 18px;
-        }
-
-        /* Dropdown Section */
-        .dropdown-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+        /* Summary Section */
+        .summary-container {
             width: 80%;
             margin: 20px auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
-
-        .dropdown {
-            width: 48%;
-            margin-bottom: 10px;
-        }
-
-        .dropdown-header {
-            background-color: #f4f4f4;
-            padding: 10px;
-            font-size: 24px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-            border-radius: 5px;
-        }
-
-        .dropdown-content {
-            display: none;
-            padding: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .dropdown-content p {
-            margin: 0;
-        }
-
-        .active + .dropdown-content {
-            display: block;
-        }
-
-        .compare-button {
-            padding: 10px 20px;
-            margin-top: 20px;
-        }
-
-        .compare-button:hover {
-            background-color: #e8b471;
-        }
-
         /* Show More and Show Less Buttons */
         .show-more-button, .show-less-button {
             display: flex;
@@ -161,7 +71,6 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
         .show-more-button button, .show-less-button button {
             padding: 10px 20px;
             background-color: #fda92c;
@@ -170,22 +79,13 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
         .show-more-button button:hover, .show-less-button button:hover {
             background-color: #e8b471;
         }
-
-        /* Initially hidden dropdowns */
-        .show-more {
-            display: none;
-        }
-
-        .show-less-button {
-            display: none; /* Initially hide the "Show Less Topics" button */
-        }
     </style>
-    <link rel="stylesheet" href="navbar.css">
-    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/main.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -215,127 +115,65 @@
     <!-- Main content (Image and ID Card) -->
     <div class="content-container">
         <div class="profile-container">
-            <h1>NAME</h1>
+            <h1 id="politicianName">NAME</h1>
             <img id="profile" src="" alt="Picture of [Name]">
-            <p>NAME is a politician... insert AI description here</p>
-            <button class="compare-button" href="window.location.href='compare.html'">Compare with another politician</button>
+            <p id="description">Loading description...</p>
+            <button class="compare-button" onclick="window.location.href='compare.html'">Compare with another politician</button>
         </div>
 
         <div class="id-card">
             <h2>Politician Information</h2>
-            <p><strong>Name:</strong> NAME</p>
-            <p><strong>Age:</strong> AGE</p>
-            <p><strong>Political Affiliation:</strong> PARTY</p>
-            <p><strong>Position Held:</strong> POSITION</p>
+            <p><strong>Name:</strong> <span id="infoName">NAME</span></p>
+            <p><strong>Age:</strong> <span id="infoAge">AGE</span></p>
+            <p><strong>Political Affiliation:</strong> <span id="infoParty">PARTY</span></p>
+            <p><strong>Position Held:</strong> <span id="infoPosition">POSITION</span></p>
         </div>
     </div>
 
-    <!-- Dropdowns for policies -->
-    <div class="dropdown-container">
-        <div class="dropdown">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Climate Policy</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on climate policy... (e.g., supports renewable energy, Paris Agreement, etc.)</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Gun Policy</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on gun policy... (e.g., supports stricter gun control laws, background checks, etc.)</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Healthcare</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on healthcare... (e.g., supports universal healthcare, Affordable Care Act, etc.)</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Education</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on education... (e.g., supports public schools, student loan forgiveness, etc.)</p>
-            </div>
-        </div>
-
-        <!-- Hidden dropdowns initially -->
-        <div class="dropdown show-more">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Foreign Policy</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on foreign policy... (e.g., supports alliances, diplomacy, etc.)</p>
-            </div>
-        </div>
-
-        <div class="dropdown show-more">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Immigration</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on immigration... (e.g., supports DACA, border control, etc.)</p>
-            </div>
-        </div>
-
-        <div class="dropdown show-more">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Economy</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on economy... (e.g., supports tax reform, economic growth, etc.)</p>
-            </div>
-        </div>
-
-        <div class="dropdown show-more">
-            <button class="dropdown-header" onclick="toggleDropdown(this)">Social Issues</button>
-            <div class="dropdown-content">
-                <p>Summary of politician's views on social issues... (e.g., supports equal rights, LGBTQ rights, etc.)</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Button to reveal more dropdowns -->
-    <div class="show-more-button">
-        <button onclick="showMore()">Show More Topics</button>
-    </div>
-
-    <!-- Button to hide dropdowns -->
-    <div class="show-less-button">
-        <button onclick="showLess()">Show Less Topics</button>
+    <!-- Summary Section -->
+    <div class="summary-container">
+        <h2>Summary of Policies</h2>
+        <p id="policySummary">Loading policy summary...</p> <!-- This is where the Google AI response will be loaded -->
     </div>
 
     <script>
-        function toggleDropdown(button) {
-            button.classList.toggle("active");
-        }
-
-        function showMore() {
-            const moreDropdowns = document.querySelectorAll('.show-more');
-            moreDropdowns.forEach(dropdown => {
-                dropdown.style.display = 'block';
+        const apiKey = "AIzaSyDqKJ7ZhvNSrEnUoTcpZU0ZCG_xQcXnymM"; // Use your own API key
+    
+        async function summarizePoliticianPreferences(bio, keyIssues, politicianUrl) {
+            const response = await fetch('/summarize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    bio: bio,
+                    key_issues: keyIssues,
+                    politician_url: politicianUrl
+                })
             });
-            // Hide the "Show More Topics" button and show "Show Less Topics" button
-            document.querySelector('.show-more-button').style.display = 'none';
-            document.querySelector('.show-less-button').style.display = 'flex';
+    
+            if (!response.ok) {
+                throw new Error('Failed to get the summary');
+            }
+    
+            const data = await response.json();
+            return data.summary; // Return the summary
         }
-
-        function showLess() {
-            const moreDropdowns = document.querySelectorAll('.show-more');
-            moreDropdowns.forEach(dropdown => {
-                dropdown.style.display = 'none';
+    
+        const userPreferences = "User preferences: This summary focuses on the politician's impact and policy effectiveness.";
+        const keyIssues = ["Climate Policy", "Gun Policy", "Healthcare", "Education"];
+        const politicianUrl = "https://en.wikipedia.org/wiki/Kamala_Harris";
+    
+                summarizePoliticianPreferences(userPreferences, keyIssues, politicianUrl)
+            .then(summary => {
+                 // Set the text content once
+                document.getElementById('policySummary').innerText = summary;  // Set the text content once
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('policySummary').innerText = "Failed to load policy summary.";
             });
-            // Hide the "Show Less Topics" button and show the "Show More Topics" button
-            document.querySelector('.show-less-button').style.display = 'none';
-            document.querySelector('.show-more-button').style.display = 'flex';
-        }
-
-        /*const apiKey = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ';
-        const cxId = '968f3968bfa4746f4';
-        const query = 'NAME'; // Replace with variable name of politician
-
-        fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cxId}&q=${query}&searchType=image`)
-        .then(response => response.json())
-        .then(data => {
-            const imageUrl = data.items[0].link; // Get the URL of the first image result
-            document.getElementById('profile').src = imageUrl; // Set the image source
-        })
-        .catch(error => console.error('Error fetching image:', error));*/
     </script>
+    
 </body>
 </html>
