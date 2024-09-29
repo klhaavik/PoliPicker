@@ -1,3 +1,4 @@
+import json
 from votesmart import VoteSmartAPI
 
 def find_politician_by_name(first_name, last_name):
@@ -15,20 +16,25 @@ def find_politician_by_name(first_name, last_name):
 
         # Check if we found any matching politicians
         if not matching_politicians:
-            print(f"No politician found with the name {first_name} {last_name}.")
-            return
+            #print(f"No politician found with the name {first_name} {last_name}.")
+            return json.dumps({"error": "No politician found."})
+            #return
 
         # Display matching politicians
-        print(f"Politicians found with the name {first_name} {last_name}:")
+        #print(f"Politicians found with the name {first_name} {last_name}:")
+        results = []
         for politician in matching_politicians:
-            print(f"Name: {politician.firstName} {politician.lastName}")
-            print(f"Title: {politician.title}")
-            print(f"Party: {politician.officeParties}")
-            print(f"Office: {politician.officeName}")
-            print("--------------------------")
+            results.append({
+                "first_name": politician.firstName,
+                "last_name": politician.lastName,
+                "title": politician.title,  # Position
+                "party": politician.officeParties,  # Party affiliation
+            })
+        
+        return json.dumps(results)
     
     except Exception as e:
-        print(f"An error occurred: {e.__class__.__name__}: {str(e)}")
+        return json.dumps({"error": str(e)})
 
 # Example usage:
 first_name = input("Enter the politician's first name: ")

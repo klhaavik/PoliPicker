@@ -1,3 +1,39 @@
+<?php
+header('Content-Type: application/json');
+
+
+if (isset($_POST['politician'])) {
+    $politicianName = htmlspecialchars($_POST['politician']); // Get the name value
+    // Split the full name into first and last name
+    $names = explode(' ', $politicianName);
+    $first_name = array_shift($names);  // Get the first element (first name)
+    $last_name = implode(' ', $names);  // Join the rest back to a string (last name)
+
+    // Call the Python script
+    $command = escapeshellcmd("python3.12 C:/Users/bachc/Documents/GitHub/PoliPicker/PHIL413.py $first_name $last_name");
+    $output = shell_exec($command);
+    $politicianData = json_decode($output, true); 
+
+    if (isset($politicianData['error'])) {
+        echo "<p>Error: " . htmlspecialchars($politicianData['error']) . "</p>";
+    } else {
+        echo "<h1>Politician Profile</h1>";
+        foreach ($politicianData as $politician) {
+            echo "<h2>" . htmlspecialchars($politician['first_name']) . " " . htmlspecialchars($politician['last_name']) . "</h2>";
+            echo "<p>Position: " . htmlspecialchars($politician['title']) . "</p>";
+            echo "<p>Party: " . htmlspecialchars($politician['party']) . "</p>";
+        }
+        /*$name = $politicianData['first_name'] + " " + $politicianData['last_name'];
+        $pos = $politicianData['title'];
+        $age = $politicianData['age'];
+        $party = $politicianData['party'];*/
+    }
+} else {
+    echo json_encode(['error' => 'First name and last name are required.']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,12 +234,13 @@
             </a>
         </div>
         <div class="navbar-center">
-            <form class="search-bar" action="results.php">
+            <form id="searchForm" class="search-bar" action="http://localhost/bioPage.php" method="post">
                 <input id="searchInput" type="text" placeholder="Search politicians...">
                 <button type="submit">
                     <i class="fa fa-search"></i>
                 </button>
             </form>
+            <div id="dropdown"></div>
         </div>
         <div class="navbar-right">
             <a href="profile.html">
@@ -215,18 +252,32 @@
     <!-- Main content (Image and ID Card) -->
     <div class="content-container">
         <div class="profile-container">
-            <h1>NAME</h1>
+            <?php if ($politicianData): ?>
+                <h1><?= htmlspecialchars($name) ?></h1>
+                <img id="profile" src="" alt="Picture of <?= htmlspecialchars($name) ?>">
+                <p><?= nl2br(htmlspecialchars($summary)) ?></p>
+                <button onclick="window.location.href='compare.html'">Compare with another politician</button>
+            <?php else: ?>
+                <p><?= htmlspecialchars("An error occurred.") ?></p>
+            <?php endif; ?>
+            <!--<h1>NAME</h1>
             <img id="profile" src="" alt="Picture of [Name]">
             <p>NAME is a politician... insert AI description here</p>
-            <button class="compare-button" href="window.location.href='compare.html'">Compare with another politician</button>
+            <button class="compare-button" href="window.location.href='compare.html'">Compare with another politician</button>-->
         </div>
+        
 
         <div class="id-card">
             <h2>Politician Information</h2>
-            <p><strong>Name:</strong> NAME</p>
-            <p><strong>Age:</strong> AGE</p>
-            <p><strong>Political Affiliation:</strong> PARTY</p>
-            <p><strong>Position Held:</strong> POSITION</p>
+            <?php if ($politicianData): ?>
+                <p><strong>Name:</strong><?= htmlspecialchars($name) ?></p>
+                <p><strong>Age:</strong> <?= htmlspecialchars($age) ?></p>
+                <p><strong>Political Affiliation:</strong><?= htmlspecialchars($party) ?></p>
+                <p><strong>Position Held:</strong><?= htmlspecialchars($pos) ?></p>
+            <?php else: ?>
+                <p><?= htmlspecialchars("An error occurred.") ?></p>
+            <?php endif; ?>
+            
         </div>
     </div>
 
@@ -337,5 +388,6 @@
         })
         .catch(error => console.error('Error fetching image:', error));*/
     </script>
+    <script src="search.js"></script>
 </body>
 </html>

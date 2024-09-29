@@ -58,8 +58,8 @@
             </a>
         </div>
         <div class="navbar-center">
-            <form id="searchForm" class="search-bar" action="http://localhost/description.php" method="post">
-                <input id="searchInput" type="text" placeholder="Search politicians...">
+            <form id="searchForm" class="search-bar" action="bioPage.php" method="post">
+                <input id="searchInput" type="text" name="politician" placeholder="Search politicians...">
                 <button type="submit">
                     <i class="fa fa-search"></i>
                 </button>
@@ -111,7 +111,7 @@
     <script>
         /*const API_KEY = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ'; // Replace with your API key
         const SEARCH_ENGINE_ID = '968f3968bfa4746f4'; // Replace with your Search Engine ID
-        const MAX_RESULTS = 5; // Limit the number of results
+        const MAX_RESULTS = 3; // Limit the number of results
 
         async function searchGoogle() {
             const query = 'Elections in Pittsburgh'; // Define the search query here
