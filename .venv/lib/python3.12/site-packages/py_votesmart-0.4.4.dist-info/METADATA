@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: py-votesmart
+Version: 0.4.4
+Summary: Libraries for interacting with the Project Vote Smart API
+Home-page: http://github.com/ndanielsen/py-votesmart/
+Author: Nathan Danielsen <nathan.danielsen@gmail.com>
+Author-email: nathan.danielsen@gmail.com
+License: BSD
+Description-Content-Type: UNKNOWN
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: simplejson (>=1.8)
+Requires-Dist: requests (==2.18.4)
+
+py-votesmart is a fork of the original python-votesmart with python3 support
+
+

@@ -106,4 +106,4 @@ def get_upcoming_elections(zipcode):
         print(f"An error occurred: {e.__class__.__name__}: {str(e)}")
 
 # Example usage
-get_upcoming_elections(zipcode='73301')  # Replace with any zipcode
+get_upcoming_elections(zipcode='15213')  # Replace with any zipcode
