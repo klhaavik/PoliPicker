@@ -29,6 +29,7 @@ Kai Haavik | kailionhaavik@gmail.com
 - Vote Smart API
 - Gemini API
 - Google Custom Search JSON API
+- Wikipedia API
 - PorkBun PHP
 - FileZilla
 - Git
