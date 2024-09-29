@@ -128,4 +128,4 @@ def compare_pages(page1_name, page2_name):
 name1 = input("Enter the name of the first politician: ")
 name2 = input("Enter the name of the second politician: ")
 
-print(compare_summaries(name1, name2, array))
+print(compare_summaries(name1, name2))
