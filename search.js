@@ -56,7 +56,7 @@ function closeResults(input, topX) {
 
 // Event listener for input
 const searchInput = document.getElementById('searchInput');
-const dropdown = document.getElementById('dropdown');
+const dropdown = document.getElementById('dropdownMenu');
 
 function loadPoliticianDescription(selectedPolitician){
     // Create a FormData object to send data
