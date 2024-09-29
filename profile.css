@@ -9,6 +9,12 @@ body {
     background-color: #f4f4f4;
 }
 
+.top-navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
 .content-container {
     width: 80%;
     max-width: 800px;

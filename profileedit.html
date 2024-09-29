@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="filteredDropdown.css">
 </head>
 <body>
-
+    <div class = "top-navbar"> 
+        <button onclick="window.location.href='index.html'">Home</button> 
+    </div>
     <div class="content-container">
         <div class="profile-header">
             <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
@@ -15,7 +18,7 @@
                 <input type="text" class="name-field" placeholder="Name">
                 <div class="additional-info">
                     <input type="text" class="age-field" placeholder="Age">
-                    <input type="text" class="hometown-field" placeholder="Hometown">
+                    <input type="text" class="zipcode-field" placeholder="Zip code">
                 </div>
                 <div class="registered-party">
                     <label for="party">Registered Party: </label>
@@ -28,15 +31,19 @@
                 </div>
             </div>
         </div>
-
-        <div class="bio-section">
-            <h2>Bio</h2>
-            <textarea class="bio-text" placeholder="Write a short bio here..."></textarea>
+        <h3>Top Issues</h3>
+        <div class="top-issues">
+            <ul id="topIssues"></ul>
         </div>
-
-        <div class="voter-preferences">
-            <h2>Voter Preferences</h2>
-            <p>List of preferences...</p>
+        <div class="dropdown-container">
+            <input type="text" id="dropdownInput" placeholder="Type to filter issues..." onclick="filterFunction()" onkeyup="filterFunction()">
+            <ul id="dropdownMenu" class="dropdown-menu">
+                <li onclick="addIssue(this)">Climate Change</li>
+                <li onclick="addIssue(this)">Healthcare Reform</li>
+                <li onclick="addIssue(this)">Public Education</li>
+                <li onclick="addIssue(this)">Job Creation</li>
+                <li onclick="addIssue(this)">Criminal Justice Reform</li>
+            </ul>
         </div>
 
         <div class="options-container">
@@ -44,6 +51,6 @@
             <a href="profile.html"><button class="cancel-button" onclick="cancelProfile()">Cancel</button></a>
         </div>
     </div>
-
+    <script src="filteredDropdown.js"></script>
 </body>
 </html>
