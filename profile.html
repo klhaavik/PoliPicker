@@ -15,30 +15,32 @@
         <div class="profile-header">
             <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
             <div class="profile-info">
-                <h2 class="name-text">John Doe</h2>
+                <h2 class="name-text"><span id="fullName"></span></h2>
                 <div class="additional-info">
-                    <p class="age-text"><strong>Age:</strong> 28</p>
-                    <p class="zip-code-text"><strong>Zip code:</strong> 15213</p>
+                    <p class="age-text"><strong>Age:</strong> <span id="age"></span></p>
+                    <p class="zip-code-text"><strong>Zip code:</strong><span id="zipCode"></span></p>
                 </div>
-                <div class="registered-party">
-                    <p><strong>Registered Party:</strong> Democrat</p>
+                <div id="party" class="registered-party">
+                    <p><strong>Registered Party:</strong> <span id="party"></span></p>
                 </div>
             </div>
+            <!--<div>
+                <p><strong>Name:</strong> <span id="fullName"></span></p>
+                <p><strong>Zip Code:</strong> <span id="zipCode"></span></p>
+                <p><strong>Age:</strong> <span id="age"></span></p>
+                <p><strong>Registered Party:</strong> <span id="party"></span></p>
+            </div>-->
         </div>
 
         <div class="top-issues">
             <h2>Top Issues</h2>
-            <ul>
-                <li>Climate Change</li>
-                <li>Healthcare Reform</li>
-                <li>Public Education</li>
-            </ul>
+            <ul id="topIssues"></ul>
         </div>
 
         <div class="options-container">
-            <a href="profileedit.html"><button class="edit-button" onclick="editProfile()">Edit</button></a>
+            <button class="edit-button" onclick="window.location.href='profileedit.html'">Edit</button>
         </div>
     </div>
-
+    <script src="filteredDropdown.js"></script>
 </body>
 </html>
