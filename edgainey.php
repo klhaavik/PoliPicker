@@ -98,7 +98,7 @@
             </a>
         </div>
         <div class="navbar-center">
-            <form class="search-bar" action="results.php">
+            <form class="search-bar">
                 <input id="searchInput" type="text" placeholder="Search politicians...">
                 <button type="submit">
                     <i class="fa fa-search"></i>
