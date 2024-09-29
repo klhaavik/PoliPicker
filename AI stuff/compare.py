@@ -68,38 +68,38 @@ def summarize_page(page_link):
     return response.text
 
 # Function to ask AI to compare the two summaries based on the content of their policies, beliefs, ideologies, and priorities
-def compare_summaries(summary1, summary2):
+def compare_summaries(summary1, summary2, array):
     # Start a chat session with the generative AI model
     chat_session = model.start_chat(
-        history=[
-            {
-                "role": "user",
-                "parts": [
-                    "Here are two summaries of different Wikipedia articles each on an American politician. Can you compare each politician based on this content, ignoring syntax, formatting, and organization, listing the similarities and differences of their policies, beliefs, ideologies, and priorities?",
-                ],
-            },
-            {
-                "role": "model",
-                "parts": [
-                    "Sure! Please provide me with both summaries and I'll compare their policies, beliefs, ideologies, and priorities.",
-                ],
-            },
-            {
-                "role": "user",
-                "parts": [
-                    f"Summary 1: {summary1}\n\nSummary 2: {summary2}",
-                ],
-            },
-            {
-                "role": "model",
-                "parts": [
-                    "",
-                ],
-            },
-        ]
-    )
+  history=[
+    {
+      "role": "user",
+      "parts": [
+        "I will give you two articles and a String array. Compare these two politicians based off their political views, policy, and ideologies, focusing on using the keywords in the array. Return two bulleted lists: one for similarities and one for differences. Avoid repetition.",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "Please provide me with the two articles and the string array so I can compare the politicians for you. I'm ready to analyze the text and generate the bulleted lists! \n",
+      ],
+    },
+    {
+      "role": "user",
+      "parts": [
+        "https://en.wikipedia.org/wiki/Kamala_Harris \nhttps://en.wikipedia.org/wiki/Donald_Trump\n[\"gun violence\", \"education\", \"foreign policy\"]",
+      ],
+    },
+    {
+      "role": "model",
+      "parts": [
+        "## Kamala Harris vs. Donald Trump: A Comparison\n\nHere's a comparison of Kamala Harris and Donald Trump based on the provided keywords:\n\n**Similarities:**\n\n* **Foreign Policy:** Both Harris and Trump have expressed concerns about the rise of China and its economic and military influence. \n* **Education:** Both politicians have stressed the importance of school choice and have voiced support for charter schools, albeit with different motivations and approaches. \n\n**Differences:**\n\n* **Gun Violence:** Harris supports stricter gun control measures, advocating for universal background checks, bans on assault weapons and high-capacity magazines. Trump has generally opposed stricter gun control, arguing that the Second Amendment guarantees the right to bear arms.\n* **Education:** Harris prioritizes increased funding for public schools, while Trump has advocated for diverting funds from public schools to private and charter schools. \n* **Foreign Policy:** Harris supports a more multilateral approach to foreign policy, advocating for international cooperation and alliances. Trump has taken a more unilateral approach, often prioritizing American interests over international cooperation. He has also withdrawn from key international agreements like the Paris Climate Accord and the Iran nuclear deal.\n\n**Please note:** This comparison is based on publicly available information and may not fully encompass the nuanced views of both politicians. It's crucial to consult diverse sources and consider the context of their statements for a comprehensive understanding. \n",
+      ],
+    },
+  ]
+)
 
-    response = chat_session.send_message("Compare these two politicians based on their policies, beliefs, ideologies, and priorities, and highlight similarities and differences.")
+    response = chat_session.send_message("INSERT_INPUT_HERE")
     return response.text
 
 # Function to summarize two Wikipedia pages and compare them
@@ -127,5 +127,6 @@ def compare_pages(page1_name, page2_name):
 # Example Usage
 name1 = input("Enter the name of the first politician: ")
 name2 = input("Enter the name of the second politician: ")
+array = input("Add String array of keywords: ")
 
-compare_pages(name1, name2)
+compare_summaries(name1, name2, array)
