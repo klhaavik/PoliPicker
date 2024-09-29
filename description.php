@@ -3,8 +3,9 @@ $summary = ''; // Initialize summary variable
 $error = ''; // Initialize error variable
 
 // Check if the form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
-    $politicianName = escapeshellarg($_POST['name']); // Escape the input for safety
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['politician'])) {
+    $politicianName = htmlspecialchars($_POST['politician']); // Get the name value
+    /*$politicianName = escapeshellarg($_POST['name']); // Escape the input for safety*/
 
     // Command to run the Python script
     $command = "POLITICIAN_NAME=$politicianName python3 genwiki.py";
@@ -19,10 +20,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
         $error = "An error occurred while running the Python script: " . implode("\n", $output);
     }
 }
+/*if (isset($_POST['politician'])) {
+    $politicianName = htmlspecialchars($_POST['politician']); // Get the name value
+
+    // Command to run the Python script
+    $command = "POLITICIAN_NAME=$politicianName python3 genwiki.py";
+
+    // Execute the command and capture the output and error output
+    exec($command . ' 2>&1', $output, $return_var);
+
+    // Check if the command executed successfully
+    if ($return_var === 0) {
+        $summary = implode("\n", $output); // Join the output array into a string
+    } else {
+        $error = "An error occurred while running the Python script: " . implode("\n", $output);
+    }
+}*/
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,11 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
             background-color: rgba(160, 80, 190, 0.5);
             margin: 20px;
         }
+
         .top-navbar {
             display: flex;
             justify-content: flex-end;
             padding: 10px;
         }
+
         .profile-container {
             display: inline-block;
             text-align: center;
@@ -48,14 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
             background-color: white;
             color: black;
         }
+
         img {
-            height: 250px; 
-            width: 250px;   
+            height: 250px;
+            width: 250px;
             object-fit: cover;
             border-radius: 10px;
             display: block;
-            margin: 0 auto; 
+            margin: 0 auto;
         }
+
         button {
             padding: 10px 20px;
             margin-top: 20px;
@@ -65,14 +87,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #e8b471;
         }
     </style>
 </head>
+
 <body>
-    <div class="top-navbar"> 
-        <button onclick="window.location.href='index.html'">Home</button> 
+    <div class="top-navbar">
+        <button onclick="window.location.href='index.html'">Home</button>
     </div>
     <div class="profile-container">
         <?php if ($summary): ?>
@@ -102,13 +126,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
 
         if (query) {
             fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cxId}&q=${query}&searchType=image`)
-            .then(response => response.json())
-            .then(data => {
-                const imageUrl = data.items[0].link; // Get the URL of the first image result
-                document.getElementById('profile').src = imageUrl; // Set the image source
-            })
-            .catch(error => console.error('Error fetching image:', error));
+                .then(response => response.json())
+                .then(data => {
+                    const imageUrl = data.items[0].link; // Get the URL of the first image result
+                    document.getElementById('profile').src = imageUrl; // Set the image source
+                })
+                .catch(error => console.error('Error fetching image:', error));
         }
     </script>
 </body>
+
 </html>

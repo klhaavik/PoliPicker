@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        body {
+        /*body {
             font-family: Arial, sans-serif;
+            /*text-align: center;
             background-color: rgba(160, 80, 190, 0.5);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navbar Styles */
-        .navbar {
+            margin: 20px;
+        }*/
+        .top-navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -23,7 +21,7 @@
             width: 100%;
         }
 
-        .navbar a {
+        /*.navbar a {
             color: white;
             text-decoration: none;
         }
@@ -43,7 +41,7 @@
             width: 300px;
             border-radius: 5px;
             border: 1px solid #ccc;
-        }
+        }*/
 
         /* Main Content Styles */
         .content-container {
@@ -60,8 +58,13 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 300px;
+            /*width: 300px;*/
             height: 300px;
+            width: 90%;
+            top: 15vw;
+            display: inline-block;
+            text-align: center;
+            padding: 20px;
             border: 2px solid #ccc;
             border-radius: 10px;
             background-color: white;
@@ -76,7 +79,6 @@
             border-radius: 10px;
         }
 
-        /* ID Card Container */
         .id-card {
             display: flex;
             flex-direction: column;
@@ -142,12 +144,22 @@
             display: block;
         }
 
+        .compare-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        .compare-button:hover {
+            background-color: #e8b471;
+        }
+
         /* Show More and Show Less Buttons */
         .show-more-button, .show-less-button {
             display: flex;
             justify-content: center;
             width: 100%;
-            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .show-more-button button, .show-less-button button {
@@ -172,11 +184,14 @@
             display: none; /* Initially hide the "Show Less Topics" button */
         }
     </style>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <div class="navbar">
+    <nav class="navbar">
         <div class="navbar-left">
             <a href="index.html">
                 <img class="navbar-img" src="logo.png" alt="Polipicker">
@@ -192,15 +207,18 @@
         </div>
         <div class="navbar-right">
             <a href="profile.html">
-                <img id="pfp" class="navbar-img" src="ProfilePicture.png" alt="Account">
+                <img id="pfp" class="navbar-img" src="profilePicDefault.png" alt="Account">
             </a>
         </div>
-    </div>
+    </nav>
 
     <!-- Main content (Image and ID Card) -->
     <div class="content-container">
         <div class="profile-container">
+            <h1>NAME</h1>
             <img id="profile" src="" alt="Picture of [Name]">
+            <p>NAME is a politician... insert AI description here</p>
+            <button class="compare-button" href="window.location.href='compare.html'">Compare with another politician</button>
         </div>
 
         <div class="id-card">
@@ -307,7 +325,7 @@
             document.querySelector('.show-more-button').style.display = 'flex';
         }
 
-        const apiKey = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ';
+        /*const apiKey = 'AIzaSyAgNrmfbMobAQfBOmKxhU2rosEwuYZwLdQ';
         const cxId = '968f3968bfa4746f4';
         const query = 'NAME'; // Replace with variable name of politician
 
@@ -317,7 +335,7 @@
             const imageUrl = data.items[0].link; // Get the URL of the first image result
             document.getElementById('profile').src = imageUrl; // Set the image source
         })
-        .catch(error => console.error('Error fetching image:', error));
+        .catch(error => console.error('Error fetching image:', error));*/
     </script>
 </body>
 </html>
