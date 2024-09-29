@@ -216,7 +216,7 @@
     <div class="content-container">
         <div class="profile-container">
             <h1>Kamala Harris</h1>
-            <img id="profile" src="https://th.bing.com/th/id/OIP.DVjMOm2250TL9evkWs7kiwAAAA?rs=1&pid=ImgDetMain" alt="Picture of [Name]">
+            <img id="profile" src="https://th.bing.com/th/id/OIP.DVjMOm2250TL9evkWs7kiwAAAA?rs=1&pid=ImgDetMain" alt="Picture of Kamala Harris">
             <p>Kamala Harris is the 49th Vice President of the United States, serving under President Joe Biden. She made history as the first woman, the first Black woman, and the first South Asian American to hold the office. Before becoming Vice President, Harris served as a U.S. Senator from California from 2017 to 2021, where she was known for her advocacy on criminal justice reform, healthcare, and immigration. Prior to her Senate career, she was California’s Attorney General from 2011 to 2017, and the District Attorney of San Francisco from 2004 to 2011. Throughout her career, Harris has been a prominent voice on issues of racial and social justice.</p>
             <button class="compare-button" href="window.location.href='compare.html'">Compare with another politician</button>
         </div>

@@ -3,10 +3,12 @@ const database = [
     "Joe Biden",
     "Kamala Harris",
     "Donald Trump",
+    "JD Vance",
     "Joe Manchin",
-    "Marjorie Greene",
+    "Tim Walz",
     "Chuck Schumer",
-    "Mitch McConnell"
+    "Mitch McConnell",
+    "Ed Gainey"
 ];
 
 // Levenshtein distance function

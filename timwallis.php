@@ -215,18 +215,18 @@
     <!-- Main content (Image and ID Card) -->
     <div class="content-container">
         <div class="profile-container">
-            <h1>Kamala Harris</h1>
-            <img id="profile" src="https://th.bing.com/th/id/OIP.DVjMOm2250TL9evkWs7kiwAAAA?rs=1&pid=ImgDetMain" alt="Picture of [Name]">
-            <p>Kamala Harris is the 49th Vice President of the United States, serving under President Joe Biden. She made history as the first woman, the first Black woman, and the first South Asian American to hold the office. Before becoming Vice President, Harris served as a U.S. Senator from California from 2017 to 2021, where she was known for her advocacy on criminal justice reform, healthcare, and immigration. Prior to her Senate career, she was California’s Attorney General from 2011 to 2017, and the District Attorney of San Francisco from 2004 to 2011. Throughout her career, Harris has been a prominent voice on issues of racial and social justice.</p>
+            <h1>Tim Walz</h1>
+            <img id="profile" src="https://media2.citybeat.com/citybeat/imager/tim-walz-to-visit-cincinnati-during-harris-campaign-push/u/slideshow/18240830/tim_walz_official_portrait.jpg?cb=1727468502" alt="Picture of Tim Walz">
+            <p>Tim Walz is the 41st Governor of Minnesota, having taken office in January 2019. A member of the Democratic-Farmer-Labor Party, he previously served as a U.S. Representative for Minnesota's 1st congressional district from 2007 to 2019. Walz, a retired Army National Guard veteran and former public school teacher, has focused on issues such as education, healthcare, and economic development throughout his career. His leadership style emphasizes collaboration and bipartisanship, seeking to address the needs of all Minnesotans.</p>
             <button class="compare-button" href="window.location.href='compare.html'">Compare with another politician</button>
         </div>
 
         <div class="id-card">
             <h2>Politician Information</h2>
-            <p><strong>Name:</strong>Kamala Harris</p>
-            <p><strong>Age:</strong>59</p>
+            <p><strong>Name:</strong>Tim Walz</p>
+            <p><strong>Age:</strong>60</p>
             <p><strong>Political Affiliation:</strong>Democrat</p>
-            <p><strong>Position Held:</strong>Vice President</p>
+            <p><strong>Position Held:</strong>Governor of Minnesota</p>
         </div>
     </div>
 
@@ -235,28 +235,28 @@
         <div class="dropdown">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Climate Policy</button>
             <div class="dropdown-content">
-                <p>Kamala Harris is a strong advocate for climate action and supports comprehensive policies to address climate change. She has emphasized the importance of transitioning to clean energy, reducing carbon emissions, and investing in green jobs. As Vice President, Harris has backed the Biden administration's goals to achieve net-zero emissions by 2050 and rejoin the Paris Climate Agreement. She also champions environmental justice, advocating for protections for low-income and minority communities that are disproportionately affected by pollution and climate change impacts. Harris views climate change as both a public health crisis and an economic opportunity to create sustainable infrastructure and jobs.</p>
+                <p>Tim Walz is committed to addressing climate change and transitioning Minnesota to clean energy. He supports ambitious goals to reduce greenhouse gas emissions and has outlined plans for a carbon-free power sector by 2050. Walz advocates for investing in renewable energy sources, such as wind and solar, and promoting energy efficiency. He also emphasizes the importance of environmental justice, seeking to ensure that low-income and marginalized communities are included in climate solutions. Under his leadership, Minnesota has engaged in regional initiatives to combat climate change and protect natural resources.</p>
             </div>
         </div>
 
         <div class="dropdown">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Gun Policy</button>
             <div class="dropdown-content">
-                <p>Kamala Harris is a strong proponent of stricter gun control measures. She supports universal background checks, banning assault weapons, and closing loopholes that allow firearms to be obtained without proper oversight, such as the "boyfriend loophole." Harris has called for mandatory background checks for gun shows and private sales and advocates for red flag laws that would allow courts to temporarily remove guns from individuals deemed a danger to themselves or others. She also supports holding gun manufacturers accountable for their role in gun violence. Throughout her career, Harris has emphasized the need for common-sense gun laws to reduce mass shootings and gun-related deaths in the U.S.</p>
+                <p>Tim Walz supports common-sense gun safety measures to reduce gun violence while respecting Second Amendment rights. He advocates for universal background checks, red flag laws, and closing loopholes that allow firearms to be purchased without thorough screening. Walz emphasizes the need for community-based violence prevention programs and has called for a more comprehensive approach to mental health services to address the root causes of gun violence. His stance reflects a commitment to public safety and the well-being of Minnesota families.</p>
             </div>
         </div>
 
         <div class="dropdown">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Healthcare</button>
             <div class="dropdown-content">
-                <p>Kamala Harris advocates for expanding access to affordable healthcare for all Americans. She supports strengthening the Affordable Care Act (ACA) and has called for lowering prescription drug costs and reducing healthcare disparities, particularly for marginalized communities. Harris has expressed support for a public option, which would allow Americans to choose between private insurance and a government-run plan, though earlier in her career she endorsed "Medicare for All." She emphasizes the importance of healthcare as a fundamental right and prioritizes mental health services, reproductive health access, and addressing maternal mortality, especially among women of color.</p>
+                <p>Tim Walz advocates for accessible and affordable healthcare for all Minnesotans. He supports strengthening the Affordable Care Act and expanding Medicaid to provide coverage for low-income individuals and families. Walz emphasizes the importance of reducing prescription drug costs and improving mental health services. He has also promoted policies aimed at addressing health disparities in underserved communities. His approach includes a focus on preventative care and public health initiatives to enhance overall community health.</p>
             </div>
         </div>
 
         <div class="dropdown">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Education</button>
             <div class="dropdown-content">
-                <p>Kamala Harris is a strong advocate for improving education access and equity. She supports increasing funding for public schools, raising teacher salaries, and expanding early childhood education through universal pre-K. Harris has emphasized the need to address disparities in education for low-income and minority students, advocating for measures to close the achievement gap. She also supports tuition-free community college and has called for reforms to student loan debt, including forgiveness for low-income borrowers. Harris believes in investing in STEM education and vocational training to prepare students for the modern workforce, and she is a vocal proponent of making higher education more affordable and accessible.</p>
+                <p>Tim Walz is a strong proponent of public education and believes in investing in Minnesota's schools to ensure every child has access to quality education. He supports increased funding for K-12 education, affordable higher education, and vocational training. Walz emphasizes the need to address disparities in educational resources, particularly for low-income and minority students. He advocates for teacher support, mental health resources in schools, and initiatives to improve student outcomes, aiming to prepare Minnesota students for the challenges of the future.</p>
             </div>
         </div>
 
@@ -264,28 +264,28 @@
         <div class="dropdown show-more">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Foreign Policy</button>
             <div class="dropdown-content">
-                <p>Kamala Harris supports a foreign policy centered on diplomacy, multilateralism, and the strengthening of global alliances. She emphasizes the importance of rebuilding partnerships with traditional allies and working through international organizations like the United Nations and NATO. Harris advocates for addressing global challenges such as climate change, cyber threats, and human rights abuses. She has called for a firm stance against authoritarian regimes while promoting democratic values and human rights globally. Harris also stresses the need to strengthen national security through intelligence cooperation and addressing the root causes of migration and global instability, including poverty and conflict.</p>
+                <p>As a governor, Tim Walz's foreign policy perspectives are primarily shaped by his focus on economic development and fostering international relationships that benefit Minnesota. He emphasizes the importance of trade partnerships, particularly for Minnesota's agricultural and manufacturing sectors. Walz supports policies that strengthen diplomatic ties and promote collaboration on global challenges such as climate change and public health. He advocates for human rights and democratic values in international relations, reflecting a commitment to building a more equitable world.</p>
             </div>
         </div>
 
         <div class="dropdown show-more">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Immigration</button>
             <div class="dropdown-content">
-                <p>Kamala Harris advocates for comprehensive immigration reform that includes a pathway to citizenship for undocumented immigrants, particularly DREAMers brought to the U.S. as children. She opposes harsh immigration enforcement policies and supports ending family separation at the border. Harris has called for the protection of asylum seekers and the humane treatment of immigrants, while also emphasizing the need to address the root causes of migration, such as violence and poverty in Central America. She supports expanding legal immigration avenues and modernizing the immigration system to reflect the country’s economic needs and humanitarian values. Harris views immigration as a key element of America's strength and diversity.</p>
+                <p>Tim Walz supports comprehensive immigration reform that includes a pathway to citizenship for undocumented immigrants and protections for DACA recipients. He believes in treating immigrants with dignity and respect, advocating for policies that promote family reunification and ensure access to education and healthcare for all residents. Walz has spoken out against harsh immigration enforcement practices and emphasizes the contributions of immigrants to Minnesota's economy and communities. His approach reflects a commitment to inclusion and equity.</p>
             </div>
         </div>
 
         <div class="dropdown show-more">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Economy</button>
             <div class="dropdown-content">
-                <p>Kamala Harris advocates for an inclusive economy that benefits all Americans, with a focus on reducing income inequality and expanding opportunities for the middle class. She supports raising the federal minimum wage to $15 per hour, promoting paid family leave, and closing the gender pay gap. Harris is a proponent of tax reforms that ensure corporations and the wealthiest individuals pay their fair share, while providing tax relief for working families. She also emphasizes the importance of investing in infrastructure, clean energy, and education to create jobs and strengthen long-term economic growth. Harris supports initiatives to boost small businesses and ensure equitable access to economic opportunities, particularly for underserved communities.</p>
+                <p>Tim Walz aims to build a strong and equitable economy in Minnesota by supporting small businesses, creating jobs, and investing in infrastructure. He advocates for raising the minimum wage, expanding paid family leave, and ensuring workers' rights are protected. Walz emphasizes the importance of job training and workforce development programs to prepare Minnesotans for the evolving job market. He also supports efforts to close the wealth gap and address income inequality, prioritizing policies that uplift low- and middle-income families.</p>
             </div>
         </div>
 
         <div class="dropdown show-more">
             <button class="dropdown-header" onclick="toggleDropdown(this)">Social Issues</button>
             <div class="dropdown-content">
-                <p>Kamala Harris is a strong advocate for social justice and equality, with a focus on addressing systemic racism, gender inequality, and LGBTQ+ rights. She supports reforms in the criminal justice system, including ending mass incarceration, eliminating cash bail, and decriminalizing marijuana. Harris is also a vocal proponent of reproductive rights, advocating for women's access to abortion and contraception. She has pushed for stronger protections against workplace discrimination based on race, gender, or sexual orientation, and she supports legislation like the Equality Act to safeguard LGBTQ+ rights. Harris emphasizes the need for policies that ensure fairness, dignity, and equal opportunity for all individuals, particularly those from marginalized communities.</p>
+                <p>Tim Walz is a strong advocate for social justice and equality, focusing on issues such as racial equity, LGBTQ+ rights, and women's rights. He supports policies that aim to eliminate systemic racism and promote inclusion in all areas of society. Walz has emphasized the need for criminal justice reform, including addressing police accountability and investing in community-led safety initiatives. He also champions reproductive rights and works to ensure that all Minnesotans have access to healthcare and support services, reflecting a commitment to dignity and respect for all individuals.</p>
             </div>
         </div>
     </div>
